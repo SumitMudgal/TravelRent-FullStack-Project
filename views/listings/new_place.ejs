@@ -1,0 +1,118 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Place</title>
+</head> -->
+
+<!-- Iss Upar wale part ko EJS-MATE i.e. boiler_plate use karne keliye comment kiya hai, jab createkiya tha ye Web-page CURD operatiions ke wakt , tab original form me hi likha tha. -->
+
+<% layout("/layouts/boilerplate.ejs") -%>
+
+<body>
+    <div class="row">
+      <div class="col col-8 offset-2">
+        <h2>Please Add the details of New Place</h2>
+       <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" placeholder="Place Name" name="title" class="form-control" required>
+
+            <div class="valid-feedback">        <!--For Valid i/p case-->
+                Looks good!
+            </div>
+
+            <div class="invalid-feedback">     <!--For Invalid case-->
+                Please Enter a valid Title.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" placeholder="Description of the place" name="description" class="form-control" required>
+
+            <div class="valid-feedback">     <!--For Valid case-->
+                Looks good!
+            </div>
+
+            <div class="invalid-feedback">     <!--For Invalid case-->
+                Please Enter a valid Description.
+            </div>
+        </div>
+        
+        <!-- <div class="mb-3">
+            <label for="image" class="form-label">Image URL</label>
+            <input type="text" placeholder="Image URL" name="image" class="form-control">
+
+            <div class="valid-feedback">     
+                Looks good!
+            </div>
+
+            <div class="invalid-feedback">     
+                Please Enter a valid Image.
+            </div>
+        </div> -->
+
+        <!-- Commenting this for Upload Image -->
+
+        <!-- Project Phase 3 Part A  "Upload Images" ---------------------------------------------------------------------->
+        <div class="mb-3">
+            <label for="place_image" class="form-label">Upload Place Image</label>
+            <input type="file" placeholder="Upload Image" name="place_image" class="form-control" required>
+
+            <div class="valid-feedback">     <!--For Valid case-->
+                Looks good!
+            </div>
+
+            <div class="invalid-feedback">     <!--For Invalid case-->
+                Please Upload a valid Image.
+            </div>
+        </div>
+        <!-- --------------------------------------------------------------------------------------------------------- -->
+        <div class="row">
+            <div class="mb-3  col-md-4">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" placeholder="Enter Price" name="price" class="form-control" required>
+
+                <div class="valid-feedback">      <!--For Valid case-->
+                    Looks good!
+                </div>
+
+                <div class="invalid-feedback">     <!--For Invalid case-->
+                    Please Enter a valid Price.
+                </div>
+            </div>
+            
+            <div class="mb-3 col-md-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" placeholder="Enter Location" name="location" class="form-control" required>
+
+                <div class="valid-feedback">     <!--For Valid case-->
+                    Looks good!
+                </div>
+ 
+                <div class="invalid-feedback">     <!--For Invalid case-->
+                    Please Enter a valid Location.
+                </div>
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" placeholder="Enter Country" name="country" class="form-control" required>
+
+            <div class="valid-feedback">    <!--For Valid case-->
+                Looks good!
+            </div>
+
+        </div>
+        
+        <button class="btn btn-dark add-btn">Add Place</button>
+        <br>
+        <br>
+       </form>
+      </div>
+    </div>
+</body>
+<!-- </html> -->

@@ -1,0 +1,80 @@
+<!-- Project Phase-2 Part-d -->
+
+<% layout("/layouts/boilerplate.ejs")  -%>
+
+<h2 style="color: red; text-decoration: solid; text-align: center;"><%= error %></h2>    <!-- Ye line ka matlab, agar koi error aaya to idhar likhege-->
+
+<body>
+
+    <div class="row mt-4">
+        <h1 class="col-6 offset-3">SignUp for TravelRent!</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col col-8 offset-3">
+          <form method="post" action="/signup" novalidate class="needs-validation">
+          <div class="mb-3 col-6">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" placeholder="Enter Username" name="username" class="form-control" required>
+
+            <div class="valid-feedback">        <!--For Valid i/p case-->
+                Looks good!
+            </div>
+
+            <div class="invalid-feedback">     <!--For Invalid case-->
+                Please Enter a valid Username.
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" placeholder="Enter E-mail" name="email" class="form-control" required>
+
+            <div class="valid-feedback">        <!--For Valid i/p case-->
+                Looks good!
+            </div>
+
+            <div class="invalid-feedback">     <!--For Invalid case-->
+                Please Enter a valid Email Address.
+            </div>
+          </div>
+
+          <div class="mb-3 col-6">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" placeholder="Create password" name="password" class="form-control" required>
+
+            <div class="valid-feedback">        <!--For Valid i/p case-->
+                Looks good!
+            </div>
+
+            <div class="invalid-feedback">     <!--For Invalid case-->
+                Please Enter a valid Email Address.
+            </div>
+          </div>
+          <br>
+          <br>
+
+          <button class="btn btn-success">SignUp</button>
+       </form>
+       <br>
+       <br>
+       <br>
+     </div> 
+    </div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

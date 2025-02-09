@@ -1,0 +1,123 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Place Info</title>
+</head> -->
+
+<!-- Iss Upar wale part ko EJS-MATE i.e. boiler_plate use karne keliye comment kiya hai, jab createkiya tha ye Web-page CURD operatiions ke wakt , tab original form me hi likha tha. -->
+
+<% layout("/layouts/boilerplate.ejs") -%>
+
+<body>
+    <div class="row col-8 offset-2">
+        <div class="col">
+            <form method="post" action="/listings/<%=place_info._id%>?_method=PATCH" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-4">
+                    <label for="title" class="for-label">Title</label>
+                    <input type="text" placeholder="Place Name" name="title" value="<%=place_info.title%>" class="form-control" required>
+
+                    <div class="valid-feedback">        <!--For Valid i/p case-->
+                        Looks good!
+                    </div>
+        
+                    <div class="invalid-feedback">     <!--For Invalid case-->
+                        Please Enter a valid Title.
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="description" class="for-label">Description</label>
+                    <input type="text" placeholder="Description of the place" name="description" value="<%=place_info.description%>" class="form-control" required>
+
+                    <div class="valid-feedback">     <!--For Valid case-->
+                        Looks good!
+                    </div>
+        
+                    <div class="invalid-feedback">     <!--For Invalid case-->
+                        Please Enter a valid Description.
+                    </div>
+                </div>
+
+                <!-- Project Phase 3 Part b "Image Preview in Edit Form" ------------------------------------>
+                   <div class="mb-4">
+                       <lablel for="picture" class="for-label"><strong>Original Image</strong></lablel>
+                       <img name="picture" class="form-control" src="<%= place_info.image %>" style="height: 200px; width: 200px; border: none; border-radius: 20px;">
+                   </div>
+                <!-- -------------------------------------------------------------------------------------- -->
+
+                
+                <!-- <div class="mb-4">
+                    <label for="image" class="for-label">Image URL</label>
+                    <input type="text" placeholder="Image URL" name="image" value="<%#=place_info.image%>" class="form-control" required>
+
+                    <div class="valid-feedback">     
+                        Looks good!
+                    </div>
+        
+                    <div class="invalid-feedback">     
+                        Please Enter a valid Image.
+                    </div>
+                </div> -->
+
+                <!-- Project Phase 3 Part B "Image Upload to Cloud" ------------------------>
+                 <div class="mb-4">
+                    <label for="place_image" class="for-label">Upload New Image</label>
+                    <input type="file" name="place_image" class="form-control">
+
+                    <div class="valid-feedback">     
+                        Looks good!
+                    </div>
+        
+                    <div class="invalid-feedback">     
+                        Please Enter a valid Image.
+                    </div>
+                 </div>
+                <!-- --------------------------------------------------------------------------------- -->
+
+                <div class="row">
+                    <div class="mb-4 col-md-3">
+                        <label for="price" class="for-label">Price</label>
+                        <input type="number" placeholder="Enter Price" name="price" value="<%=place_info.price%>" class="form-control" required>
+
+                        <div class="valid-feedback">      <!--For Valid case-->
+                            Looks good!
+                        </div>
+        
+                        <div class="invalid-feedback">     <!--For Invalid case-->
+                            Please Enter a valid Price.
+                        </div>    
+                    </div>
+                    
+                    <div class="mb-4 col-md-6">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" placeholder="Enter Location" name="location" value="<%=place_info.location%>" class="form-control" required>
+
+                        <div class="valid-feedback">     <!--For Valid case-->
+                            Looks good!
+                        </div>
+         
+                        <div class="invalid-feedback">     <!--For Invalid case-->
+                            Please Enter a valid Location.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" placeholder="Enter Country" name="country" value="<%=place_info.country%>" class="form-control" required>
+
+                    <div class="valid-feedback">    <!--For Valid case-->
+                        Looks good!
+                    </div>
+                </div>
+          
+                <button class="btn btn-dark edit-btn">Edit</button>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
+</body>
+<!-- </html> -->

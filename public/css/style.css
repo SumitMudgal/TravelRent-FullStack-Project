@@ -1,0 +1,207 @@
+/* body {
+    background-color: pink;
+} */
+
+/*navbar styling*/
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important; /*Overwrite Bootstrap property on selected class*/
+}
+
+#check a:hover{
+    color:#958f9d !important;
+}
+
+#check2 a:hover{
+  font-weight: bold !important;
+}
+/* --------------------x-------------- */
+
+/* Footer styling */
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    height: 7rem;
+    background-color: rgb(214, 210, 210);
+}
+
+.fo-icons {
+      width: 100%;
+      font-size: 20px;
+}
+
+.fo-company {
+      width: 100%;
+      font-size: 20px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+}
+
+.fo-links a {
+    text-decoration: none ;
+    color: #222222;
+    font-size: 17px;
+}
+
+.fo-links :hover{
+    text-decoration: underline ;
+}
+
+.fo-icons i {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+/* -------------------x------------------- */
+
+/* Index Styling i.e. Main page Places Appearing styling */
+
+.card {
+    border: none !important;  
+    margin-bottom: 4rem !important;
+}
+
+.card img {
+    border-radius: 1rem !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.lists-anchor {
+    text-decoration: none;
+}
+
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white !important;
+}
+
+/* -------------------------x------------------- */
+
+
+/* Add NEW Place Listing Page Styling:- */
+
+.add-btn {
+    background-color: #fe424d !important;
+}
+
+.add-btn:hover {
+    background-color: #f0212f !important;
+}
+
+/* -------------------------x--------------------- */
+
+
+/*  Edit Place Information wepage Styling */
+
+.edit-btn {
+    background-color: #fe424d !important;
+}
+
+.edit-btn:hover {
+    background-color: #f0212f !important;
+}
+
+/* ------------------------x--------------- */
+
+/* Place Details Webpage Styling:- */
+
+.heading h2{
+    text-align: center !important;
+}
+.card {
+    align-items: center;
+}
+
+.card-img-top {
+    object-fit: cover;
+}
+
+.edit-2-btn {
+    background-color: #fe424d !important;
+}
+
+.edit-2-btn:hover {
+    background-color: #f0212f !important;
+}
+
+.delete-btn {
+    background-color: rgb(3, 119, 3) !important;
+}
+
+.delete-btn:hover {
+    background-color: rgb(10, 150, 10) !important;
+}
+/* --------------------x------------------- */
+
+
+/* Project Phase 3 Part B "Maps" */
+/* .maps iframe {
+    border-radius: 10px !important;
+    width: 600px;
+    height: 450px;
+    border: 0;
+    margin-left: 200px;
+} */
+
+/* ------------------------------------------------------------------- */
+
+
+/* Project Phase 3 Part C "Ui icons" */
+
+.icons {
+    display: flex;
+    justify-content: flex-start;
+    cursor:context-menu ;
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    margin-left: 90px;
+    padding-top: 15px;
+}
+
+.icons .icon {
+    padding-inline: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* .icons .label {
+    margin-left: -12px;
+} */
+
+.icon:hover {
+   background-color: #dbd3d3;
+}
+
+/*  Search Bar from Bootstrap */
+
+#searchbar {
+    margin-left: 290px;
+}
+
+
+

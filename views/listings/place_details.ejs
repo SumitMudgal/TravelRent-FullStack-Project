@@ -1,0 +1,138 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Details</title>
+</head> -->
+
+<!-- Iss Upar wale part ko EJS-MATE i.e. boiler_plate use karne keliye comment kiya hai, jab createkiya tha ye Web-page CURD operatiions ke wakt , tab original form me hi likha tha. -->
+
+<% layout("/layouts/boilerplate.ejs") -%>
+
+
+<h2 style="color: red; text-decoration: solid; text-align: center;"><%= error %></h2>   <!-- Ye line ka matlab, agar koi "flash" "error" aaya to idhar likhege-->
+
+
+<body>
+    <div class="row">
+      <div class="heading">
+        <h2>Details of <%=place_details.title%></h2>
+      </div>
+      <br>
+      <br>
+      <div class="card" >
+        <img src="<%=place_details.image%>" class="card-img-top" alt="..." style="height: 20rem; width: 45rem;">
+      <br>
+      </div>
+      <br>
+      <br>
+      <p><b>Title</b>: <%=place_details.title%></p>
+      <br>
+      <p><b>Descrption</b>: <%=place_details.description%></p>
+      <br>
+      <p><b>Price</b>: Rs. <%=place_details.price.toLocaleString("en-IN")%>/ per night</p>  <!--For commas in Indian currency we use function ".toLocaleString("en-IN")"-->
+      <br>
+      <p><b>Location</b>: <%=place_details.location%></p>
+      <br>
+      <p><b>Country</b>: <%=place_details.country%></p>
+
+      <div class="row">
+         <% if(Current_User && Current_User._id.toString() == place_details.owner._id.toString()) {    %>
+           <div class="col col-2">
+                <form method="get" action="/listings/<%=place_details._id%>/edit">
+                    <button class="btn btn-dark edit-2-btn">Edit Info</button>
+                </form>
+            </div>
+            <div class="col col-2">
+                <form method="post" action="/listings/<%=place_details._id%>/delete?_method=DELETE">
+                    <button class="btn btn-dark delete-btn">Delete Place</button>
+                </form>
+            </div>
+           
+          <%  }  %>  
+        <!-- Project Phase 2 Part E "Owner of Listing" -->
+        <br>
+        <br>
+        <br>
+        <div>
+           <p><i>Owned by <strong><%= place_details.owner.username %></strong></i></p>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <hr>
+      <!-- Reviews (Project phase 2 part a)-->
+       <div class="mb-6 mt-3" id="review">
+          <h2>Leave a Review</h2>
+          <form method="post" action="/listings/<%=place_details._id%>/reviews">
+            <div>
+              <label for="customRange1" class="form-label">Ratings</label>
+              <input type="range" name="ratings" min="1" max="5" step="1" class="form-range" id="customRange1">
+            </div>
+            <!-- Project Phase 3 Part A "Ratings" from Startability Github Library -->
+             <!-- ---------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+            <div>
+              <label class="form-label">Comment</label>
+              <textarea name="comment" cols="10" rows="3" placeholder="Write your thoughts about the place.... " class="form-control" required></textarea>
+            </div>
+            <br>
+            <% if(Current_User) { %>
+            <button class="btn btn-success">Submit Review</button>
+            <% } else { %>
+              <i><p style="color: red;">Login For Submitting a Review</p></i>
+              <% } %>
+          </form>
+       </div>
+    </div>
+    <br>
+    
+    <hr>
+    <div>
+      <h4>All Reviews</h4>
+      <br>
+       <!-- <ul>
+        <%# for(let review of place_details.reviews) { %>
+             <li><strong><%#= review.ratings %> Stars </strong>, <i><%#= review.comment %> </i></li>
+        <%# } %>
+       </ul> -->
+
+       <!-- Bootstrap card for Reviews -->  <!--We used "Titles, text, and links" card of Bootstrap-->
+       <div class="row">
+         <% for(let review of place_details.reviews) { %>
+               <div class="card col-5 row-2">
+                <div class="card-body" style="border: 2px solid rgb(187, 184, 184); border-radius: 10px;">
+                  <h5 class="card-title" style="padding-left: 5px;"><b><i><%= review.author.username %></i></b></h5>
+                  <p class="card-text" style="padding-left: 7px;"><strong><%= review.ratings %> Stars</strong></p>
+                  <p class="card-text" style="padding-left: 10px; padding-bottom: 8px; padding-right: 5px;"><i><%= review.comment %></i></p>
+                  <form class="mb-3 ms-1" method="post" action="/listings/<%= place_details._id %>/reviews/<%= review._id %>?_method=DELETE">
+                    <% if(Current_User && Current_User._id.toString() == review.author._id.toString()) { %>
+                      <button class="btn btn-danger">Delete</button>
+                    <% } %>  
+                  </form>
+                </div>
+               </div>
+         <% } %>
+       </div>
+
+       <!-- <br>
+        Project Phase 3 Part B "Maps"-------------------------------- 
+          <%  if(place_details.map_url) { %>
+            <div class="maps">
+              <h3>Find Location in Maps</h3>
+              <br>
+              <iframe name="map" src=<%= place_details.map_url %>></iframe>
+            </div>
+          <% } %>  
+       ------------------------------------------------------------------------ -->
+    </div>
+    <br>
+    <br>
+
+   </div> 
+
+
+</body>
+</html>
