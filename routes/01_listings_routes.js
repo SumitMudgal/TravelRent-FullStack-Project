@@ -15,10 +15,10 @@ const User = require("../models/03_user");
 const passport = require("passport");
 
 // Import wrapAsync
-const wrapAsync = require("D:/Apna College Delta part 2/Delta Batch Part2/03_Major_project/utils/wrapAsync.js");
+const wrapAsync = require("../utils/wrapAsync.js");
 
 // Import ExpressError file
-const ExpressError = require("D:/Apna College Delta part 2/Delta Batch Part2/03_Major_project/utils/ExpressError.js");
+const ExpressError = require("../utils/ExpressError.js");
 
 
 // Project Phase-2 Part-e
