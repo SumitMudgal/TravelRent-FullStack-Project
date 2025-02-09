@@ -12,10 +12,10 @@ const Listing = require("./models/01_listening.js");
 const Reviews = require("./models/02_reviews.js");
 
 // Import wrapAsync
-const wrapAsync = require("D:/Apna College Delta part 2/Delta Batch Part2/03_Major_project/utils/wrapAsync.js");
+const wrapAsync = require("./utils/wrapAsync.js");
 
 // Import ExpressError file
-const ExpressError = require("D:/Apna College Delta part 2/Delta Batch Part2/03_Major_project/utils/ExpressError.js");
+const ExpressError = require("./utils/ExpressError.js");
 
 // Express
 const express = require("express");
