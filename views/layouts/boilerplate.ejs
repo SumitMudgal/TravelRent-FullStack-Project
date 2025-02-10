@@ -13,10 +13,8 @@
     
     <!-- After Completing Project "Navbar" expand -->
     <style>
-        .navbar[aria-expanded="true"] {
-            .navbar {
-                height: 1200px !important;
-            }
+        .navbar:has(.navbar-toggler[aria-expanded="true"]) {
+            height: 1200px !important;
         }
 
     </style>
