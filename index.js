@@ -69,6 +69,9 @@ const review = require("./routes/02_reviews_routes.js");
 // Import "/signup" Routes   "Project Phase-2 part-d"
 const user = require("./routes/03_user_routes.js");
 
+// Import "/bookings" Routes
+const bookingRoutes = require("./routes/04_booking_routes.js");
+
 // Express Session                             
 const session = require("express-session");      // Project Phase-2 Part-c
 
@@ -89,6 +92,7 @@ const User = require("./models/03_user.js");
 // Project Phase 3 Part D "Connect-Mongo Session" --------------------------
 
 const store = MongoStore.create({
+    //mongoUrl: "mongodb://127.0.0.1:27017/Travelrent",
     mongoUrl: process.env.ATLASDB_URL,  // Database Url jahape User ka Session Data Store Hoga.
     crypto: {
         secret: process.env.SECRET  // Changed String For Deploying
@@ -97,7 +101,7 @@ const store = MongoStore.create({
     touchAfter: 24 * 60 * 60   // 24 Hours tak User Data Store karega 
 })
 
-store.on("error", () => {
+store.on("error", (err) => {
     console.log("ERROR in MONGO SESSION STORE", err);
 });
 
@@ -372,6 +376,8 @@ app.use("/listings/:id/reviews", review);    // After commenting here all Routes
 
 //------------------------------------------x-------------------------------------
 
+//* Bookings Route
+app.use("/bookings", bookingRoutes);
 
 
 // * error Route i.e. If No i/p Route matches from the above declared Routes, then it will catched by this "* Route i.e. All route", and we will give error using ExpressError.

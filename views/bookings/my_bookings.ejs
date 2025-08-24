@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerplate.ejs")  -%>
+
+<h2 style="color: red; text-decoration: solid; text-align: center;"><%= error %></h2>   <!-- Ye line ka matlab, agar koi error aaya to idhar likhege-->
+
+
+<body>
+
+     <div class="row mt-4">
+        <h1 class="col-6 offset-3">My Bookings</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="row">
+        <% bookings.forEach(booking => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="<%= booking.place.image %>" class="card-img-top" alt="<%= booking.place.title %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= booking.place.title %></h5>
+                        <p class="card-text">Check-In: <%= booking.checkIn.toDateString() %></p>
+                        <p class="card-text">Check-Out: <%= booking.checkOut.toDateString() %></p>
+                        <p class="card-text fw-bold">Total: ₹<%= booking.totalPrice %></p>
+                        <p class="card-text text-success">Status: <%= booking.status %></p>
+
+                        <% if(booking.status === "Booked") { %>
+                            <form action="/bookings/<%= booking._id %>/cancel?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-link text-danger p-0">Cancel Booking</button>
+                            </form>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+  </div>
+
+</body>
+
+
+
+
+
+
+
+
+

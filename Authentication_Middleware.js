@@ -43,6 +43,21 @@ is_Owner = async (req, res, next) => {
 };
 
 
+// Bookings Validation "24/08/2025"
+let isLoggedInforBookings = (req, res, next) => {
+    if(! req.isAuthenticated()) // i.e. NOT Authenticated
+    {
+       //----------- Project Phase 2 Part e "Post-login" ----------------------
+         
+       req.session.url_user_trying_to_access = req.originalUrl;   // Creating a New Variable "url_user_trying_to_access"  in request Session. Jisme req ki originalUrl i.e. jiss url pe user jaana chahata tha login ke pehle, usko store kardiya.
+       //------------------------------------------------
+       req.flash("error", "You must be logged in see your Bookings!");
+       return res.redirect("/login");
+    }
+     // else
+    next();
+}  
+
 
 
 
@@ -50,6 +65,8 @@ module.exports = {
     isLoggedIn,
     save_User_Url_to_Access,
     is_Owner,
+    // New Middleware with new Flash Message for booking
+    isLoggedInforBookings
 };
 
 

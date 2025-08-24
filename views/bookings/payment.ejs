@@ -1,0 +1,53 @@
+<% layout("/layouts/boilerplate.ejs") -%>
+
+<h2 style="color: red; text-align: center;"><%= error %></h2> 
+
+<div class="row mt-4">
+  <h1 class="col-6 offset-3">Payment for <%= booking.place.title %></h1>
+
+  <div class="card p-3 mb-3 mt-3">
+    <p><strong>Check-In:</strong> <%= booking.checkIn.toDateString() %></p>
+    <p><strong>Check-Out:</strong> <%= booking.checkOut.toDateString() %></p>
+    <p><strong>Guests:</strong> <%= booking.guests || 1 %></p>
+    <p class="fw-bold mt-2">Total Amount: ₹<%= booking.totalPrice %></p>
+  </div> 
+
+  <!-- Payment Form -->
+  <form id="payment-form" method="POST" action="/bookings/<%= booking._id %>/pay/success">
+    <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
+
+    <button id="rzp-button1" type="button" class="btn btn-primary w-100">
+      Confirm & Pay
+    </button>
+  </form>
+  <br><br>
+</div>
+
+<!-- Razorpay Checkout Script -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  var options = {
+    "key": "<%= key %>", // Razorpay Key ID
+    "amount": "<%= booking.totalPrice * 100 %>", // Amount in paise
+    "currency": "INR",
+    "name": "TravelRent",
+    "description": "Booking Payment",
+    "order_id": "<%= orderId %>",
+    "theme": {
+      "color": "#528FF0"
+    },
+    "handler": function (response) {
+      // Save the payment_id in hidden field and submit form
+      document.getElementById('razorpay_payment_id').value = response.razorpay_payment_id;
+      document.getElementById('payment-form').submit();
+    }
+  };
+
+  var rzp1 = new Razorpay(options);
+
+  document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+  }
+  
+</script>

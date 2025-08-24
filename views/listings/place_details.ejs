@@ -36,7 +36,7 @@
       <p><b>Location</b>: <%=place_details.location%></p>
       <br>
       <p><b>Country</b>: <%=place_details.country%></p>
-
+      
       <div class="row">
          <% if(Current_User && Current_User._id.toString() == place_details.owner._id.toString()) {    %>
            <div class="col col-2">
@@ -60,7 +60,13 @@
         </div>
       </div>
       <br>
-      <br>
+      <!-- Razorpay Phase 24/08/2025 -->
+       <div class="mb-1">
+        <a href="/bookings/<%= place_details._id %>/book" class="btn btn-success btn-lg">
+         Book Now
+        </a>
+       </div>
+       <br>
       <br>
       <hr>
       <!-- Reviews (Project phase 2 part a)-->

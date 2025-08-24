@@ -1,0 +1,60 @@
+<% layout("/layouts/boilerplate.ejs")  -%>
+
+<h2 style="color: red; text-decoration: solid; text-align: center;"><%= error %></h2>   <!-- Ye line ka matlab, agar koi error aaya to idhar likhege-->
+
+<body>
+   
+    <div class="row mt-4">
+       <h1 class="col-6 offset-3">Fill Journey Details</h1>
+       <br>
+        <br>
+        <br>
+        <br>
+
+       <div class="col col-8 offset-3">
+          
+          <form method="post" action="/bookings/<%=place._id%>/book" novalidate class="needs-validation">
+             <div>
+            <label for="check_in" class="form-label">Check-In Date:</label>
+            <input type="date" name="checkIn" id="check_in" required class="form-control">
+        </div>
+        
+        <br><br>
+
+        <div>
+            <label for="check_out" class="form-label">Check-Out Date:</label>
+            <input type="date" name="checkOut" id="check_out" required class="form-control">
+        </div>
+
+        <br><br>
+
+        <div>
+            <label for="guests" class="form-label">Number of Guests:</label>
+            <input type="number" name="guests" id="guests" min="1" value="1" class="form-control">
+        </div>
+
+        <br><br>
+
+        <button type="submit" class="btn btn-success">Proceed to Payment</button>
+      </form>
+        <br><br><br>
+       </div> 
+       
+    </div>
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
