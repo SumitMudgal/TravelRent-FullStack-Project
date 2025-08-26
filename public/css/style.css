@@ -292,3 +292,7 @@ p {
 #loginLabel {
     color: whitesmoke;
 }
+
+#bookLabel label {
+    color: whitesmoke;
+}

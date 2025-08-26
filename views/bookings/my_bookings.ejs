@@ -18,7 +18,7 @@
                 <div class="card h-100">
                     <img src="<%= booking.place.image %>" class="card-img-top" alt="<%= booking.place.title %>">
                     <div class="card-body">
-                        <h5 class="card-title"><%= booking.place.title %></h5>
+                        <h5 class="card-title" style="color: goldenrod;"><%= booking.place.title %></h5>
                         <p class="card-text">Check-In: <%= booking.checkIn.toDateString() %></p>
                         <p class="card-text">Check-Out: <%= booking.checkOut.toDateString() %></p>
                         <p class="card-text fw-bold">Total: ₹<%= booking.totalPrice %></p>

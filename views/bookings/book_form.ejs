@@ -14,21 +14,21 @@
        <div class="col col-8 offset-3">
           
           <form method="post" action="/bookings/<%=place._id%>/book" novalidate class="needs-validation">
-             <div>
+             <div id="bookLabel">
             <label for="check_in" class="form-label">Check-In Date:</label>
             <input type="date" name="checkIn" id="check_in" required class="form-control">
         </div>
         
         <br><br>
 
-        <div>
+        <div id="bookLabel">
             <label for="check_out" class="form-label">Check-Out Date:</label>
             <input type="date" name="checkOut" id="check_out" required class="form-control">
         </div>
 
         <br><br>
 
-        <div>
+        <div id="bookLabel">
             <label for="guests" class="form-label">Number of Guests:</label>
             <input type="number" name="guests" id="guests" min="1" value="1" class="form-control">
         </div>
