@@ -1,25 +1,37 @@
-/* body {
-    background-color: pink;
-} */
+body {
+    /* background-color: #5c5252 !important; */
+    background-color: #270f48 !important;
+}
+
+h1 {
+    color: goldenrod !important;
+}
 
 /*navbar styling*/
 
 .navbar {
     height: 5rem;
-    background-color: white;
+    background-color: #393535;
 }
 
 .fa-compass {
-    color: #fe424d;
+    /* color: #e9e0e0; */
+    color: sandybrown;
     font-size: 2rem;
+    transition: transform 0.3s ease; /* smooth rotation */
+}
+
+.fa-compass:hover{
+    transform: rotate(90deg);
 }
 
 .nav-link {
-    color: #222222 !important; /*Overwrite Bootstrap property on selected class*/
+    color: goldenrod!important; /*Overwrite Bootstrap property on selected class*/
+    font-weight: 500 !important;
 }
 
 #check a:hover{
-    color:#958f9d !important;
+    color:#925adb !important;
 }
 
 #check2 a:hover{
@@ -37,7 +49,7 @@
     width: 100%;
     text-align: center;
     height: 7rem;
-    background-color: rgb(214, 210, 210);
+    background-color: rgb(118, 111, 111);
 }
 
 .fo-icons {
@@ -74,6 +86,9 @@
 .card {
     border: none !important;  
     margin-bottom: 4rem !important;
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+    background-color: #270f48 !important;
 }
 
 .card img {
@@ -82,6 +97,17 @@
 
 .card-body {
     padding: 0 !important;
+}
+
+.card-body .card-text1{
+    color: whitesmoke;
+    font-size:large;
+}
+
+.card-body .card-text-2{
+    color: whitesmoke;
+    font-size:medium;
+    margin-left: 40px;
 }
 
 .lists-anchor {
@@ -112,6 +138,14 @@
     background-color: #f0212f !important;
 }
 
+#newPlaceHeading {
+     color: goldenrod !important;
+}
+
+#newPlaces {
+    color: whitesmoke;
+}
+
 /* -------------------------x--------------------- */
 
 
@@ -125,15 +159,48 @@
     background-color: #f0212f !important;
 }
 
+#editPlaces label {
+    color: whitesmoke;
+}
+
 /* ------------------------x--------------- */
 
 /* Place Details Webpage Styling:- */
 
 .heading h2{
     text-align: center !important;
+    color: goldenrod !important;
 }
 .card {
     align-items: center;
+}
+
+p b {
+    color: whitesmoke !important;
+}
+
+p {
+    color: antiquewhite;
+}
+
+#review h2{
+    color: whitesmoke;
+}
+
+#review label{
+    color: antiquewhite;
+}
+
+#AllReviews h4{
+    color: whitesmoke;
+}
+
+#AllReviews .card i{
+    color: azure;
+}
+
+.card-text strong{
+    color: aquamarine !important;
 }
 
 .card-img-top {
@@ -187,6 +254,7 @@
     padding-inline: 15px;
     border-radius: 5px;
     text-align: center;
+    color: #cbc7d0;
 }
 
 /* .icons .label {
@@ -194,7 +262,7 @@
 } */
 
 .icon:hover {
-   background-color: #dbd3d3;
+   background-color: #7e7777;
 }
 
 /*  Search Bar from Bootstrap */
@@ -203,5 +271,15 @@
     margin-left: 290px;
 }
 
+/* --------------------------------------------------------- */
 
+/* 26/08/2025 */
+/* SignUp & Login UI Page changes */
 
+#signUpLabel {
+    color: whitesmoke;
+}
+
+#loginLabel {
+    color: whitesmoke;
+}

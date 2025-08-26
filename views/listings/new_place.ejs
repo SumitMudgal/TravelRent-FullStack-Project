@@ -13,9 +13,9 @@
 <body>
     <div class="row">
       <div class="col col-8 offset-2">
-        <h2>Please Add the details of New Place</h2>
+        <h2 id="newPlaceHeading">Please Add the details of New Place</h2>
        <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
-        <div class="mb-3">
+        <div class="mb-3" id="newPlaces">
             <label for="title" class="form-label">Title</label>
             <input type="text" placeholder="Place Name" name="title" class="form-control" required>
 
@@ -28,7 +28,9 @@
             </div>
         </div>
         
-        <div class="mb-3">
+        <br>
+
+        <div class="mb-3" id="newPlaces">
             <label for="description" class="form-label">Description</label>
             <input type="text" placeholder="Description of the place" name="description" class="form-control" required>
 
@@ -40,6 +42,8 @@
                 Please Enter a valid Description.
             </div>
         </div>
+
+        <br>
         
         <!-- <div class="mb-3">
             <label for="image" class="form-label">Image URL</label>
@@ -57,7 +61,7 @@
         <!-- Commenting this for Upload Image -->
 
         <!-- Project Phase 3 Part A  "Upload Images" ---------------------------------------------------------------------->
-        <div class="mb-3">
+        <div class="mb-3" id="newPlaces">
             <label for="place_image" class="form-label">Upload Place Image</label>
             <input type="file" placeholder="Upload Image" name="place_image" class="form-control" required>
 
@@ -69,8 +73,10 @@
                 Please Upload a valid Image.
             </div>
         </div>
+
+        <br>
         <!-- --------------------------------------------------------------------------------------------------------- -->
-        <div class="row">
+        <div class="row" id="newPlaces">
             <div class="mb-3  col-md-4">
                 <label for="price" class="form-label">Price</label>
                 <input type="number" placeholder="Enter Price" name="price" class="form-control" required>
@@ -84,7 +90,7 @@
                 </div>
             </div>
             
-            <div class="mb-3 col-md-3">
+            <div class="mb-3 col-md-3" id="newPlaces">
                 <label for="location" class="form-label">Location</label>
                 <input type="text" placeholder="Enter Location" name="location" class="form-control" required>
 
@@ -98,7 +104,8 @@
             </div>
         </div>
         
-        <div class="mb-3">
+        
+        <div class="mb-3" id="newPlaces">
             <label for="country" class="form-label">Country</label>
             <input type="text" placeholder="Enter Country" name="country" class="form-control" required>
 
@@ -107,6 +114,8 @@
             </div>
 
         </div>
+
+        <br>
         
         <button class="btn btn-dark add-btn">Add Place</button>
         <br>

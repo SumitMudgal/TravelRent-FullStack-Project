@@ -14,7 +14,7 @@
     <div class="row col-8 offset-2">
         <div class="col">
             <form method="post" action="/listings/<%=place_info._id%>?_method=PATCH" novalidate class="needs-validation" enctype="multipart/form-data">
-                <div class="mb-4">
+                <div class="mb-4" id="editPlaces">
                     <label for="title" class="for-label">Title</label>
                     <input type="text" placeholder="Place Name" name="title" value="<%=place_info.title%>" class="form-control" required>
 
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 
-                <div class="mb-4">
+                <div class="mb-4" id="editPlaces">
                     <label for="description" class="for-label">Description</label>
                     <input type="text" placeholder="Description of the place" name="description" value="<%=place_info.description%>" class="form-control" required>
 
@@ -41,7 +41,7 @@
                 </div>
 
                 <!-- Project Phase 3 Part b "Image Preview in Edit Form" ------------------------------------>
-                   <div class="mb-4">
+                   <div class="mb-4" id="editPlaces">
                        <lablel for="picture" class="for-label"><strong>Original Image</strong></lablel>
                        <img name="picture" class="form-control" src="<%= place_info.image %>" style="height: 200px; width: 200px; border: none; border-radius: 20px;">
                    </div>
@@ -62,7 +62,7 @@
                 </div> -->
 
                 <!-- Project Phase 3 Part B "Image Upload to Cloud" ------------------------>
-                 <div class="mb-4">
+                 <div class="mb-4" id="editPlaces">
                     <label for="place_image" class="for-label">Upload New Image</label>
                     <input type="file" name="place_image" class="form-control">
 
@@ -76,7 +76,7 @@
                  </div>
                 <!-- --------------------------------------------------------------------------------- -->
 
-                <div class="row">
+                <div class="row" id="editPlaces">
                     <div class="mb-4 col-md-3">
                         <label for="price" class="for-label">Price</label>
                         <input type="number" placeholder="Enter Price" name="price" value="<%=place_info.price%>" class="form-control" required>
@@ -90,7 +90,7 @@
                         </div>    
                     </div>
                     
-                    <div class="mb-4 col-md-6">
+                    <div class="mb-4 col-md-6" id="editPlaces">
                         <label for="location" class="form-label">Location</label>
                         <input type="text" placeholder="Enter Location" name="location" value="<%=place_info.location%>" class="form-control" required>
 
@@ -104,7 +104,7 @@
                     </div>
                 </div>
                 
-                <div class="mb-4">
+                <div class="mb-4" id="editPlaces">
                     <label for="country" class="form-label">Country</label>
                     <input type="text" placeholder="Enter Country" name="country" value="<%=place_info.country%>" class="form-control" required>
 
