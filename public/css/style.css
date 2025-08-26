@@ -30,6 +30,15 @@ h1 {
     font-weight: 500 !important;
 }
 
+.navbar-toggler {
+    background-color: #925adb !important;
+}
+
+.navbar-toggler:hover {
+    background-color: #a480d3 !important;
+}
+
+
 #check a:hover{
     color:#925adb !important;
 }
