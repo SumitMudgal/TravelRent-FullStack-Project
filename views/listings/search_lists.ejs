@@ -1,0 +1,97 @@
+ <!-- Search Places List Ejs Page -->
+
+
+<% layout("/layouts/boilerplate.ejs") -%>
+
+<h3 style="color: red;"><%= success %></h3> <!-- Project Phase-2 part-c -->
+
+<h3 style="color: red;"><%= error %></h3>  <!-- Project Phase-2 Part-e -->
+
+<body>
+
+    <!-- Project Phase 3 Part C "UI Filter i.e. Icons"---------------------------------------------->
+     
+    <div class="icons">
+        <div class="icon">
+            <i class="fa-solid fa-bed"></i>
+            <br>
+            <div class="label">Rooms</div>
+        </div>
+        <div class="icon">
+            <i class="fa-solid fa-warehouse"></i>
+            <div class="label">Cottages</div>
+        </div>
+        <div class="icon">
+            <i class="fa-solid fa-umbrella-beach"></i>
+            <div class="label">Beaches</div>
+        </div>
+        <div class="icon">
+            <i class="fa-solid fa-monument"></i>
+            <div class="label">Historical</div>
+        </div>
+        <div class="icon">
+            <i class="fa-solid fa-city"></i>
+            <div class="label">Metro Cities</div>
+        </div>
+        <div class="icon">
+            <i class="fa-solid fa-mountain"></i>
+            <div class="label">Mountains</div>
+        </div>
+        <div class="icon">
+            <i class="fa-solid fa-cable-car"></i>
+            <div class="label">Adventure</div>
+        </div>
+        <div class="icon">
+            <i class="fa-solid fa-tents"></i>
+            <div class="label">Camping</div>
+        </div>
+        <div class="icon">
+            <i class="fa-solid fa-ship"></i>
+            <div class="label">Cruise</div>
+        </div>
+        <div class="icon">
+            <i class="fa-solid fa-person-skiing-nordic"></i>
+            <div class="label">Snow Adventures</div>
+        </div>
+    </div>
+    <br>
+    <!-- ----------------------------------------------------------------------------------------------------- -->
+
+
+    <h1>List of ALL Places in <i><%=location%></i></h1>
+    <!-- <form method="get" action="listings/new">
+        <button>Add New Place</button>
+    </form> -->      
+
+    <!-- Iss upar wale button ko comment kar diya kyuki ab Iss button ka kaam hum hamare Bootstrap wale Navbaar me "Add New Listing" wale button ko dege.  -->
+    
+    <br>
+    <%#for(let list of all_list) {  %>
+        <!-- <li><a href="/listings/<%#=list._id%>/find"><%#=list.title%></a></li> anchor tag for SHOW route i.e. to view specific place in more detail. -->
+    <%# } %> 
+
+    <!-- Iss upar wale code ko ab comment/delete kar rahe hai kyuki ab Index Styling me Cards ka use karna hai aur sirf list nahi chahiye. -->
+ 
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <%for(let list of search_places_list) {  %>
+            <a href="/listings/<%=list._id%>/find" class="lists-anchor">
+                <div class="card col" >
+                    <img src="<%=list.image%>" class="card-img-top" alt="..." style="height: 20rem;"> <!--'style="height: 20rem' apan ne baad me likha hai , har card ki size same 20 rem rakhne ke liye.-->
+                    <div class="card-img-overlay"> <i class="fa-regular fa-heart"></i></div><!--ye div alag se copy kiya hai "Image Overlay" Card Bootstrap se.-->
+                    <div class="card-body">
+                     <b><p class="card-text1"><%= list.title %></p></b>
+                      <p class="card-text-2">&#8377; <%= list.price %>/ per night</p>
+                    </div>
+                  </div>
+            </a>
+        <% } %>
+    </div> 
+    
+</body>
+<!-- </html> -->
+
+
+
+
+
+

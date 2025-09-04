@@ -72,6 +72,9 @@ const user = require("./routes/03_user_routes.js");
 // Import "/bookings" Routes
 const bookingRoutes = require("./routes/04_booking_routes.js");
 
+// Import "/search" Routes
+const searchRoutes = require("./routes/05_search_routes.js");
+
 // Express Session                             
 const session = require("express-session");      // Project Phase-2 Part-c
 
@@ -378,6 +381,10 @@ app.use("/listings/:id/reviews", review);    // After commenting here all Routes
 
 //* Bookings Route
 app.use("/bookings", bookingRoutes);
+
+
+//* Search Route
+app.use("/search", searchRoutes);
 
 
 // * error Route i.e. If No i/p Route matches from the above declared Routes, then it will catched by this "* Route i.e. All route", and we will give error using ExpressError.
