@@ -276,8 +276,27 @@ p {
 
 /*  Search Bar from Bootstrap */
 
-#searchbar {
-    margin-left: 290px;
+@media (min-width: 1024px) {
+    #searchbar {
+      margin-left: 290px;
+      width: 400px;
+  }
+}
+
+/*  for small screens */
+@media (max-width: 760px) {
+    #searchbar {
+        margin-left: auto;
+        width: 280px !important;
+    }
+}
+
+/* for extra small screens */
+@media (max-width: 370px) {
+    #searchbar {
+        margin-left: auto;
+        width: 180px !important;
+    }
 }
 
 /* --------------------------------------------------------- */

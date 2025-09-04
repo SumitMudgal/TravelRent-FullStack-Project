@@ -49,10 +49,10 @@ main().then(() => {
 }).catch(err => console.log(err));
 
 async function main() {
-   //await mongoose.connect("mongodb://127.0.0.1:27017/Travelrent");
+   await mongoose.connect("mongodb://127.0.0.1:27017/Travelrent");
 
    // Project Deployment "Project Phase 3 Part D"
-   await mongoose.connect(process.env.ATLASDB_URL);
+   //await mongoose.connect(process.env.ATLASDB_URL);
 }
 
 // Method-Override
@@ -95,8 +95,8 @@ const User = require("./models/03_user.js");
 // Project Phase 3 Part D "Connect-Mongo Session" --------------------------
 
 const store = MongoStore.create({
-    //mongoUrl: "mongodb://127.0.0.1:27017/Travelrent",
-    mongoUrl: process.env.ATLASDB_URL,  // Database Url jahape User ka Session Data Store Hoga.
+    mongoUrl: "mongodb://127.0.0.1:27017/Travelrent",
+    //mongoUrl: process.env.ATLASDB_URL,  // Database Url jahape User ka Session Data Store Hoga.
     crypto: {
         secret: process.env.SECRET  // Changed String For Deploying
     },
